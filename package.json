@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./src/styles/index.css -o ./_site/index.css",
+    "build:css": "npx tailwindcss -i ./src/styles/main.css -o ./_site/main.css",
     "build": "npm run build:css && npx @11ty/eleventy --config=project.config.js --input=src"
   },
   "author": "",
