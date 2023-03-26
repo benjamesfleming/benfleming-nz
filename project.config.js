@@ -16,5 +16,5 @@ module.exports = function (cfg) {
     cfg.addLayoutAlias('base', 'layouts/base.njk');
     
     // Global Data
-    cfg.addGlobalData('current_date', DateTime.now().toRFC2822())
+    cfg.addGlobalData('current_date', DateTime.now().toLocaleString(DateTime.DATETIME_FULL, { locale: 'en-NZ' }))
 };
