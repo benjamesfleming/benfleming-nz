@@ -1,0 +1,24 @@
+{
+  "name": "benfleming-nz",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/styles/main.css -o ./_site/main.css",
+    "build": "npm run build:css && npx @11ty/eleventy --config=project.config.js --input=src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "luxon": "^3.3.0",
+    "markdown-it-attrs": "^4.1.6",
+    "postcss-import": "^15.1.0",
+    "rehype-external-links": "^2.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "tailwindcss": "^3.2.7",
+    "unified": "^10.1.2"
+  }
+}
