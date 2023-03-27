@@ -1,0 +1,44 @@
+---
+import { DateTime } from "luxon";
+import "~/styles/theme.css";
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props.frontmatter || Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title} | benfleming.nz</title>
+    </head>
+    <body class="w-full">
+        <div class="max-w-4xl mx-auto px-4 md:pt-12 pt-4">
+			<div>
+				<slot />
+			</div>
+			<footer class="my-4">
+				<small>Last generated: {DateTime.now().toLocaleString(DateTime.DATETIME_FULL, { locale: 'en-NZ' })}</small><br/>
+				<small>Total views:&nbsp;<span id="total_page_hits">-</span></small>
+			</footer>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const el = document.getElementById("total_page_hits");
+
+                // n.b. call the pagehits API (cloudflare function) to count the number of views per page
+                //      the ?id= paramerter should be the current path to breakdown pageshits by page
+                fetch("/pagehits?id=" + window.location.pathname)
+                    .then(res => res.ok ? res.text() : "-")
+                    .then(res => {
+                        if (el != null) {
+                            el.innerText = res
+                        }
+                    });
+            });
+        </script>
+    </body>
+</html>

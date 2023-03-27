@@ -1,6 +1,7 @@
 {
-    "recommendations": [
-        "ronnidc.nunjucks",
-        "bradlc.vscode-tailwindcss"
-    ]
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "bradlc.vscode-tailwindcss"
+  ],
+  "unwantedRecommendations": []
 }
