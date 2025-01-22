@@ -1,12 +1,14 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"],
-    },
-    "types": [
-      "@cloudflare/workers-types"
-    ]
-  }
+	"extends": "astro/tsconfigs/strict",
+	"include": ["src/**/*"],
+	"exclude": ["functions/**/*"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/*"],
+		},
+		"types": [
+			"@cloudflare/workers-types"
+		]
+	}
 }

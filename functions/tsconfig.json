@@ -1,0 +1,14 @@
+{
+	"include": [
+		"./**/*",
+		"./.well-known/**/*"
+	],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "lib": ["esnext"],
+        "types": [
+			"@cloudflare/workers-types"
+		]
+    }
+  }
