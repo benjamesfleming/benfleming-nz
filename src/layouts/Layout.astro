@@ -30,7 +30,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
                 const el = document.getElementById("total_page_hits");
 
                 // n.b. call the pagehits API (cloudflare function) to count the number of views per page
-                //      the ?id= paramerter should be the current path to breakdown pageshits by page
+                //      the ?id= parameter should be the current path to breakdown pagehits by page
                 fetch("/pagehits?id=" + window.location.pathname)
                     .then(res => res.ok ? res.text() : "-")
                     .then(res => {
